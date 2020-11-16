@@ -17,14 +17,18 @@ first, build the docker environment by:
     >docker build . -t project3
     
 Then, run the R enviornment by :
+
     >docker run -v /home/"YOUR DIRECTORY"/"YOUR PROJECT":/home/rstudio -p 8787:8787 -e PASSWORD=mypassword -i project3
 
 Or, run the jypyter notebook environment by: 
+
     >docker run -p 8765:8765 -v /home//home/"YOUR DIRECTORY"/"YOUR PROJECT":/home/rstudio -e PASSWORD=mypassword -it project3 sudo -H -u rstudio /bin/bash -c "cd ~/;jupyter lab  --ip 0.0.0.0 --port 8765"'
     
 To make the final report html, say:
+
     >make clean
     >make Report.html
 To make the assessment curve, say:
+
     >make clean
     >make full_figure.pdf
